@@ -1,438 +1,868 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study &mdash; Halcyon Cherry Creek x Scott &amp; Gina</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study &mdash; Halcyon Hotel Cherry Creek x Scott & Gina</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        :root {
-            --cream: #F5F0EB;
-            --cream-dark: #EDE6DD;
-            --gold: #C5A55A;
-            --gold-light: #D4B96E;
-            --dark: #1A1A1A;
-            --dark-mid: #2A2A2A;
-            --text-dark: #333333;
-            --text-mid: #666666;
-            --text-light: #999999;
-            --white: #FFFFFF;
-        }
+  :root {
+    --cream: #F5F0EB;
+    --cream-dark: #EDE6DD;
+    --gold: #C5A55A;
+    --gold-light: #D4B96E;
+    --dark: #1A1A1A;
+    --dark-mid: #2A2A2A;
+    --text-dark: #333333;
+    --text-mid: #666666;
+    --text-light: #999999;
+    --white: #FFFFFF;
+  }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--cream);
-            color: var(--text-dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        nav {
-            position: sticky; top: 0; z-index: 100;
-            background: var(--white);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            padding: 18px 60px;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px; font-weight: 700;
-            color: var(--dark); text-decoration: none;
-        }
-        .nav-logo em { color: var(--gold); font-style: normal; }
-        .nav-links { display: flex; gap: 36px; list-style: none; }
-        .nav-links a {
-            font-size: 12px; font-weight: 500; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--text-mid);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--gold); }
-        .nav-right { font-size: 12px; color: var(--text-light); letter-spacing: 1px; }
+  /* -- NAV -- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-logo em {
+    color: var(--gold);
+    font-style: normal;
+  }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-right {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+  }
 
-        .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
-        .photo-grid.two-col { grid-template-columns: 1.4fr 1fr; }
-        .photo-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .photo-caption {
-            position: absolute; bottom: 16px; left: 20px;
-            font-size: 11px; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--white);
-            background: rgba(0,0,0,0.5); padding: 6px 14px;
-            border-radius: 4px; backdrop-filter: blur(4px);
-        }
-        .photo-wrap { position: relative; overflow: hidden; }
-        .photo-wrap img { transition: transform 0.4s; }
-        .photo-wrap:hover img { transform: scale(1.03); }
+  /* -- PHOTO GALLERY -- */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+  .photo-grid.two-col {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .photo-grid .tall { grid-row: span 2; }
+  .photo-caption {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: rgba(0,0,0,0.5);
+    padding: 6px 14px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+  .photo-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+  .photo-wrap img {
+    transition: transform 0.4s;
+  }
+  .photo-wrap:hover img {
+    transform: scale(1.03);
+  }
 
-        .hero {
-            position: relative; height: 85vh; min-height: 600px;
-            background: linear-gradient(135deg, #2C3E50 0%, #1A1A2E 100%);
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; inset: 0;
-            background: rgba(0,0,0,0.35); z-index: 1;
-        }
-        .hero-content {
-            position: relative; z-index: 2;
-            max-width: 800px; padding: 0 40px;
-        }
-        .hero-label {
-            font-size: 11px; font-weight: 500; letter-spacing: 4px;
-            text-transform: uppercase; color: var(--gold-light); margin-bottom: 24px;
-        }
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 72px; font-weight: 900;
-            color: var(--white); line-height: 1.05; margin-bottom: 12px;
-        }
-        .hero h1 em { color: var(--gold-light); font-style: italic; font-weight: 700; }
-        .hero-divider { width: 60px; height: 2px; background: var(--gold); margin: 28px auto; }
-        .hero-sub {
-            font-size: 17px; font-weight: 300;
-            color: rgba(255,255,255,0.8); line-height: 1.7;
-            max-width: 520px; margin: 0 auto;
-        }
+  /* -- HERO -- */
+  .hero {
+    position: relative;
+    height: 85vh;
+    min-height: 600px;
+    background: url('https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2026/03/010_250818_WerkCreative_Halcyon_Hotel_300DPI-1-e1774987188853-2560x1240.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 40px;
+  }
+  .hero-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 12px;
+  }
+  .hero h1 em {
+    color: var(--gold-light);
+    font-style: italic;
+    font-weight: 700;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 28px auto;
+  }
+  .hero-sub {
+    font-size: 17px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto;
+  }
 
-        .stat-bar {
-            display: grid; grid-template-columns: repeat(4, 1fr);
-            border-top: 1px solid rgba(0,0,0,0.08);
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            background: var(--white);
-        }
-        .stat-item {
-            padding: 40px 20px; text-align: center;
-            border-right: 1px solid rgba(0,0,0,0.06);
-        }
-        .stat-item:last-child { border-right: none; }
-        .stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px; font-weight: 700;
-            color: var(--gold); line-height: 1; margin-bottom: 8px;
-        }
-        .stat-label {
-            font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
-            text-transform: uppercase; color: var(--text-mid);
-        }
+  /* -- STAT BAR -- */
+  .stat-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: var(--white);
+  }
+  .stat-item {
+    padding: 40px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(0,0,0,0.06);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
 
-        section { padding: 100px 60px; max-width: 1400px; margin: 0 auto; }
-        .section-number {
-            font-size: 12px; font-weight: 500; letter-spacing: 3px;
-            text-transform: uppercase; color: var(--gold);
-            margin-bottom: 60px; display: flex; align-items: center; gap: 16px;
-        }
-        .section-number::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
-        .section-headline {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px; font-weight: 900;
-            color: var(--dark); line-height: 1.15; margin-bottom: 16px;
-        }
-        .section-headline em { color: var(--gold); font-style: italic; font-weight: 700; }
+  /* -- SECTIONS -- */
+  section {
+    padding: 100px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .section-number {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-number::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .section-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+  .section-headline em {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 700;
+  }
 
-        .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-        .overview-text p { font-size: 16px; color: var(--text-mid); line-height: 1.8; margin-bottom: 24px; }
-        .overview-quote { border-left: 3px solid var(--gold); padding-left: 24px; margin: 36px 0; }
-        .overview-quote p {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px; font-style: italic;
-            color: var(--text-dark); line-height: 1.6;
-        }
-        .overview-details { background: var(--cream-dark); border-radius: 12px; padding: 48px; }
-        .detail-row {
-            display: flex; justify-content: space-between;
-            padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-        .detail-row:last-child { border-bottom: none; }
-        .detail-label {
-            font-size: 11px; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--text-light);
-        }
-        .detail-value { font-size: 15px; font-weight: 500; color: var(--text-dark); text-align: right; }
+  /* -- OVERVIEW -- */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .overview-text p {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .overview-quote {
+    border-left: 3px solid var(--gold);
+    padding-left: 24px;
+    margin: 36px 0;
+  }
+  .overview-quote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  .overview-details {
+    background: var(--cream-dark);
+    border-radius: 12px;
+    padding: 48px;
+  }
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .detail-value {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: right;
+  }
 
-        .dark-section {
-            background: var(--dark); padding: 100px 60px;
-            margin: 0; max-width: 100%;
-        }
-        .dark-section .section-number { color: var(--gold-light); }
-        .dark-section .section-number::before { background: var(--gold-light); }
-        .dark-section .section-headline { color: var(--white); }
-        .dark-section .section-headline em { color: var(--gold-light); }
-        .deliverables-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 32px; max-width: 1400px; margin: 0 auto;
-        }
-        .deliverable-card {
-            background: var(--dark-mid); border-radius: 12px;
-            padding: 40px 32px; border: 1px solid rgba(255,255,255,0.06);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .deliverable-card:hover { transform: translateY(-4px); border-color: rgba(197,165,90,0.3); }
-        .deliverable-icon { font-size: 28px; margin-bottom: 20px; }
-        .deliverable-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px; font-weight: 700;
-            color: var(--white); margin-bottom: 12px;
-        }
-        .deliverable-desc { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
-        .deliverable-tag {
-            display: inline-block; margin-top: 16px; padding: 6px 14px;
-            border: 1px solid rgba(197,165,90,0.4); border-radius: 20px;
-            font-size: 11px; font-weight: 500; letter-spacing: 1.5px;
-            text-transform: uppercase; color: var(--gold-light);
-        }
+  /* -- DELIVERABLES -- */
+  .dark-section {
+    background: var(--dark);
+    padding: 100px 60px;
+    margin: 0;
+    max-width: 100%;
+  }
+  .dark-section .section-number { color: var(--gold-light); }
+  .dark-section .section-number::before { background: var(--gold-light); }
+  .dark-section .section-headline { color: var(--white); }
+  .dark-section .section-headline em { color: var(--gold-light); }
 
-        .perf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
-        .perf-card {
-            background: var(--white); border-radius: 12px;
-            padding: 36px 28px; text-align: center;
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-        .perf-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 36px; font-weight: 700;
-            color: var(--gold); margin-bottom: 6px;
-        }
-        .perf-label {
-            font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
-            text-transform: uppercase; color: var(--text-light);
-        }
-        .perf-sublabel { font-size: 11px; color: var(--text-light); margin-top: 4px; }
+  .deliverables-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .deliverable-card {
+    background: var(--dark-mid);
+    border-radius: 12px;
+    padding: 40px 32px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .deliverable-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(197,165,90,0.3);
+  }
+  .deliverable-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .deliverable-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .deliverable-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+  .deliverable-tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 6px 14px;
+    border: 1px solid rgba(197,165,90,0.4);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
 
-        .highlight-bar {
-            background: var(--gold); padding: 48px 60px;
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 40px; max-width: 100%; margin: 0;
-        }
-        .highlight-item { text-align: center; }
-        .highlight-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px; font-weight: 900;
-            color: var(--white); line-height: 1; margin-bottom: 6px;
-        }
-        .highlight-label {
-            font-size: 12px; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: rgba(255,255,255,0.85);
-        }
+  /* -- PERFORMANCE -- */
+  .perf-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .perf-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 36px 28px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .perf-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .perf-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .perf-sublabel {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
 
-        .experience-items { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
-        .exp-item {
-            padding: 40px; background: var(--white);
-            border-radius: 12px; border: 1px solid rgba(0,0,0,0.06);
-        }
-        .exp-category {
-            font-size: 11px; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
-        }
-        .exp-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px; font-weight: 700;
-            color: var(--dark); margin-bottom: 12px;
-        }
-        .exp-desc { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+  /* -- HIGHLIGHT BAR -- */
+  .highlight-bar {
+    background: var(--gold);
+    padding: 48px 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 100%;
+    margin: 0;
+  }
+  .highlight-item {
+    text-align: center;
+  }
+  .highlight-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .highlight-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
 
-        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-        .tag {
-            padding: 8px 18px; border: 1px solid rgba(0,0,0,0.12);
-            border-radius: 4px; font-size: 11px; font-weight: 500;
-            letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-mid);
-        }
+  /* -- EXPERIENCE -- */
+  .experience-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 48px;
+  }
+  .exp-item {
+    padding: 40px;
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .exp-category {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .exp-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+  }
+  .exp-desc {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
 
-        .cta-section {
-            background: var(--dark); padding: 100px 60px;
-            text-align: center; max-width: 100%; margin: 0;
-        }
-        .cta-section .section-headline { color: var(--white); max-width: 600px; margin: 0 auto 16px; }
-        .cta-section .section-headline em { color: var(--gold-light); }
-        .cta-sub {
-            font-size: 16px; color: rgba(255,255,255,0.6);
-            max-width: 500px; margin: 0 auto 36px; line-height: 1.7;
-        }
-        .cta-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
-        .cta-link {
-            display: inline-block; padding: 14px 36px;
-            border: 1px solid var(--gold); color: var(--gold-light);
-            font-size: 12px; font-weight: 600; letter-spacing: 2px;
-            text-transform: uppercase; text-decoration: none;
-            border-radius: 4px; transition: all 0.2s;
-        }
-        .cta-link:hover { background: var(--gold); color: var(--white); }
-        .cta-link.primary { background: var(--gold); color: var(--white); }
-        .cta-link.primary:hover { background: var(--gold-light); }
+  /* -- TAGS -- */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .tag {
+    padding: 8px 18px;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-mid);
+  }
 
-        footer {
-            background: var(--dark);
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 24px 60px; text-align: center;
-            font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 1px;
-        }
+  /* -- CTA / FOOTER -- */
+  .cta-section {
+    background: var(--dark);
+    padding: 100px 60px;
+    text-align: center;
+    max-width: 100%;
+    margin: 0;
+  }
+  .cta-section .section-headline {
+    color: var(--white);
+    max-width: 600px;
+    margin: 0 auto 16px;
+  }
+  .cta-section .section-headline em { color: var(--gold-light); }
+  .cta-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .cta-link {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .cta-link:hover {
+    background: var(--gold);
+    color: var(--white);
+  }
+  .cta-link.primary {
+    background: var(--gold);
+    color: var(--white);
+  }
+  .cta-link.primary:hover {
+    background: var(--gold-light);
+  }
 
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 44px; }
-            .stat-bar { grid-template-columns: repeat(2, 1fr); }
-            .overview-grid { grid-template-columns: 1fr; gap: 40px; }
-            .deliverables-grid { grid-template-columns: 1fr; }
-            .perf-grid { grid-template-columns: repeat(2, 1fr); }
-            .highlight-bar { grid-template-columns: 1fr; }
-            .experience-items { grid-template-columns: 1fr; }
-            section { padding: 60px 24px; }
-            .dark-section, .cta-section { padding: 60px 24px; }
-            nav { padding: 16px 24px; }
-            .nav-links { display: none; }
-        }
-    </style>
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 60px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* -- RESPONSIVE -- */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 44px; }
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
+    .overview-grid { grid-template-columns: 1fr; gap: 40px; }
+    .deliverables-grid { grid-template-columns: 1fr; }
+    .perf-grid { grid-template-columns: repeat(2, 1fr); }
+    .highlight-bar { grid-template-columns: 1fr; }
+    .experience-items { grid-template-columns: 1fr; }
+    section { padding: 60px 24px; }
+    .dark-section, .cta-section { padding: 60px 24px; }
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+  }
+</style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-    <a class="nav-logo" href="https://mediakit.scottandgina.life/">Scott <em>&amp;</em> Gina</a>
-    <ul class="nav-links">
-        <li><a href="#overview">Overview</a></li>
-        <li><a href="#deliverables">Deliverables</a></li>
-        <li><a href="#performance">Performance</a></li>
-        <li><a href="#experience">Experience</a></li>
-    </ul>
-    <span class="nav-right">CASE STUDY &middot; 2026</span>
+  <a class="nav-logo" href="https://mediakit.scottandgina.life/">Scott <em>&</em> Gina</a>
+  <ul class="nav-links">
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#deliverables">Deliverables</a></li>
+    <li><a href="#performance">Performance</a></li>
+    <li><a href="#experience">Experience</a></li>
+  </ul>
+  <span class="nav-right">CASE STUDY &middot; 2026</span>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-    <div class="hero-content">
-        <div class="hero-label">Case Study &middot; Hotel Partnership</div>
-        <h1>Halcyon<br><em>Cherry Creek</em></h1>
-        <div class="hero-divider"></div>
-        <p class="hero-sub">A boutique hospitality collaboration in Denver's best-kept-secret neighborhood &mdash; featuring a hosted birthday stay with rooftop views of the Rockies.</p>
-    </div>
+  <div class="hero-content">
+    <div class="hero-label">Case Study &middot; Hotel Partnership</div>
+    <h1>Halcyon Hotel<br><em>Cherry Creek</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">A luxury hospitality collaboration featuring a hosted stay at Denver's most vibrant boutique hotel in the heart of Cherry Creek North.</p>
+  </div>
 </div>
 
+<!-- STAT BAR -->
 <div class="stat-bar">
-    <div class="stat-item">
-        <div class="stat-number">19.9K</div>
-        <div class="stat-label">Reel Views</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">2,736</div>
-        <div class="stat-label">Total Interactions</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">250</div>
-        <div class="stat-label">Shares</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-number">267</div>
-        <div class="stat-label">Saves</div>
-    </div>
+  <div class="stat-item">
+    <div class="stat-number">19.9K</div>
+    <div class="stat-label">Reel Views</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">2,736</div>
+    <div class="stat-label">Total Interactions</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">250</div>
+    <div class="stat-label">Shares</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">267</div>
+    <div class="stat-label">Saves</div>
+  </div>
 </div>
 
+<!-- PHOTO GALLERY &mdash; THE PROPERTY -->
+<div class="photo-grid two-col" style="max-height: 500px; overflow: hidden;">
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2026/02/MCP03858-1-1920x980.jpg" alt="Halcyon Hotel Suite">
+    <span class="photo-caption">The Suite &middot; Cherry Creek</span>
+  </div>
+  <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 4px;">
+    <div class="photo-wrap">
+      <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2026/02/MCP03503-1-1480x920.jpg" alt="Quality Italian Restaurant" style="height: 248px; object-fit: cover;">
+      <span class="photo-caption">Quality Italian</span>
+    </div>
+    <div class="photo-wrap">
+      <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2023/03/den-1440x800.jpg" alt="The Den" style="height: 248px; object-fit: cover;">
+      <span class="photo-caption">The Den</span>
+    </div>
+  </div>
+</div>
+
+<!-- INSTAGRAM REEL EMBED &mdash; HIGH PLACEMENT -->
 <section style="text-align: center; padding: 80px 60px;">
-    <div class="section-headline" style="margin-bottom: 12px;">Watch the <em>reel.</em></div>
-    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 36px;">See the full experience in action.</p>
-    <div style="display: flex; justify-content: center;">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DYaFCoduVzD/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin: 0; max-width:540px; min-width:326px; padding:0; width:100%;">
-            <a href="https://www.instagram.com/p/DYaFCoduVzD/" target="_blank" style="display:block; padding:24px; text-align:center; font-family:'Playfair Display',serif; font-size:18px; color:var(--dark); text-decoration:none;">
-                View this Reel on Instagram &nearr;
-            </a>
-        </blockquote>
-        <script async src="//www.instagram.com/embed.js"></script>
-    </div>
-    <div style="margin-top: 36px;">
-        <a href="https://mediakit.scottandgina.life/" style="display:inline-block; padding:14px 36px; background:var(--gold); color:var(--white); font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border-radius:4px;">View Full Media Kit</a>
-    </div>
+  <div class="section-headline" style="margin-bottom: 12px;">Watch the <em>reel.</em></div>
+  <p style="font-size: 14px; color: var(--text-light); margin-bottom: 36px;">See the full experience in action.</p>
+  <div style="display: flex; justify-content: center;">
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DYaFCoduVzD/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); margin: 0; max-width:540px; min-width:326px; padding:0; width:100%;">
+      <a href="https://www.instagram.com/p/DYaFCoduVzD/" target="_blank" style="display:block; padding:24px; text-align:center; font-family:'Playfair Display',serif; font-size:18px; color:var(--dark); text-decoration:none;">
+        View this Reel on Instagram &nearr;
+      </a>
+    </blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+  </div>
+  <div style="margin-top: 36px;">
+    <a href="https://mediakit.scottandgina.life/" style="display:inline-block; padding:14px 36px; background:var(--gold); color:var(--white); font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border-radius:4px;">View Full Media Kit</a>
+  </div>
 </section>
 
+<!-- 01 &mdash; OVERVIEW -->
 <section id="overview">
-    <div class="section-number">01 &mdash; Overview</div>
-    <div class="overview-grid">
-        <div class="overview-text">
-            <div class="section-headline">Denver's best-kept<br><em>secret.</em></div>
-            <p>Scott and Gina stayed at Halcyon, a Cherry Creek hotel in Denver, to celebrate Gina's birthday. The collaboration showcased the property's rooftop pool and bar overlooking the Rocky Mountains, on-site dining at Local Jones, and the personalized service that made the birthday celebration feel truly special.</p>
-            <p>The content positioned Cherry Creek as the smart alternative to downtown Denver &mdash; walkable, full of great restaurants, and way less hectic. This "hidden gem" angle resonated strongly with an audience actively looking for authentic travel recommendations beyond the obvious picks.</p>
-            <div class="overview-quote">
-                <p>&ldquo;Honestly wasn't expecting much because I'd never heard of the neighborhood, but Cherry Creek might be one of the best kept secrets in Denver.&rdquo;</p>
-            </div>
-            <div class="tags">
-                <span class="tag">Boutique Hotel</span>
-                <span class="tag">Rooftop Pool</span>
-                <span class="tag">Birthday Celebration</span>
-                <span class="tag">Denver</span>
-                <span class="tag">Cherry Creek</span>
-            </div>
-        </div>
-        <div class="overview-details">
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 32px; color: var(--dark);">Partnership Details</h3>
-            <div class="detail-row"><span class="detail-label">Partner</span><span class="detail-value">Halcyon, a Cherry Creek Hotel</span></div>
-            <div class="detail-row"><span class="detail-label">Location</span><span class="detail-value">Cherry Creek, Denver</span></div>
-            <div class="detail-row"><span class="detail-label">Stay Duration</span><span class="detail-value">Hosted birthday stay</span></div>
-            <div class="detail-row"><span class="detail-label">Property Type</span><span class="detail-value">Boutique Hotel</span></div>
-            <div class="detail-row"><span class="detail-label">Dining</span><span class="detail-value">Local Jones</span></div>
-            <div class="detail-row"><span class="detail-label">Content Date</span><span class="detail-value">May 2026</span></div>
-            <div class="detail-row"><span class="detail-label">Platforms</span><span class="detail-value">Instagram Reels, Stories</span></div>
-            <div class="detail-row"><span class="detail-label">Post Link</span><span class="detail-value"><a href="https://www.instagram.com/p/DYaFCoduVzD/" style="color: var(--gold); text-decoration: none;">View Reel &nearr;</a></span></div>
-        </div>
+  <div class="section-number">01 &mdash; Overview</div>
+  <div class="overview-grid">
+    <div class="overview-text">
+      <div class="section-headline">A hidden gem,<br><em>revealed.</em></div>
+      <p>Scott and Gina stayed at the Halcyon Hotel in Cherry Creek North, Denver &mdash; a luxury boutique hotel known for its vibrant rooftop scene, curated Gear Garage, and walkable neighborhood. The collaboration showcased the property's stylish rooms, rooftop dining at Rare Bird, and the unique amenities that set Halcyon apart from a typical hotel stay.</p>
+      <p>The content positioned Cherry Creek as an unexpected Denver highlight &mdash; a neighborhood most travelers overlook in favor of downtown. This "hidden gem" angle drove massive engagement, with nearly all interactions coming from non-followers discovering the property for the first time.</p>
+      <div class="overview-quote">
+        <p>"Honestly wasn't expecting much because I'd never heard of the neighborhood, but Cherry Creek might be one of the best kept secrets in Denver."</p>
+      </div>
+      <div class="tags">
+        <span class="tag">Boutique Hotel</span>
+        <span class="tag">Rooftop Bar</span>
+        <span class="tag">Cherry Creek</span>
+        <span class="tag">Denver</span>
+        <span class="tag">Hidden Gem</span>
+      </div>
     </div>
+    <div class="overview-details">
+      <h3 style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; margin-bottom: 32px; color: var(--dark);">Partnership Details</h3>
+      <div class="detail-row">
+        <span class="detail-label">Partner</span>
+        <span class="detail-value">Halcyon Hotel Cherry Creek</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">Cherry Creek North, Denver</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Stay Duration</span>
+        <span class="detail-value">Multi-night hosted stay</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Property Type</span>
+        <span class="detail-value">Luxury Boutique Hotel</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Dining</span>
+        <span class="detail-value">Rare Bird Rooftop &amp; Quality Italian</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Content Date</span>
+        <span class="detail-value">May 2026</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Platforms</span>
+        <span class="detail-value">Instagram Reels, Stories</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Post Link</span>
+        <span class="detail-value"><a href="https://www.instagram.com/p/DYaFCoduVzD/" style="color: var(--gold); text-decoration: none;">View Reel &nearr;</a></span>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- 02 &mdash; DELIVERABLES -->
 <div class="dark-section" id="deliverables">
-    <div style="max-width: 1400px; margin: 0 auto;">
-        <div class="section-number">02 &mdash; Deliverables</div>
-        <div class="section-headline" style="margin-bottom: 48px;">What we<br><em>delivered.</em></div>
-        <div class="deliverables-grid">
-            <div class="deliverable-card"><div class="deliverable-icon">🎬</div><div class="deliverable-title">Instagram Reel</div><div class="deliverable-desc">High-production reel showcasing the hotel entrance, room key reveal, rooftop views, and the full Cherry Creek vibe &mdash; positioned as a genuine travel recommendation for Denver visitors.</div><div class="deliverable-tag">19.9K Views</div></div>
-            <div class="deliverable-card"><div class="deliverable-icon">📱</div><div class="deliverable-title">Instagram Stories</div><div class="deliverable-desc">Real-time story coverage across @scottdclary (2M followers) documenting the birthday stay &mdash; room tour, rooftop pool, dining at Local Jones, and Cherry Creek neighborhood exploration.</div><div class="deliverable-tag">Multi-Slide</div></div>
-            <div class="deliverable-card"><div class="deliverable-icon">🍽️</div><div class="deliverable-title">Dining Feature</div><div class="deliverable-desc">Dedicated coverage of Local Jones &mdash; the hotel's on-site restaurant &mdash; highlighting the food quality and the convenience of having a solid dining option right in the property.</div><div class="deliverable-tag">Local Jones</div></div>
-            <div class="deliverable-card"><div class="deliverable-icon">🏨</div><div class="deliverable-title">Room &amp; Property</div><div class="deliverable-desc">Full showcase of the hotel room, lobby, and the distinctive black-and-white chevron entrance that became the visual anchor of the reel and the first impression for viewers.</div><div class="deliverable-tag">Lifestyle</div></div>
-            <div class="deliverable-card"><div class="deliverable-icon">🏔️</div><div class="deliverable-title">Rooftop Experience</div><div class="deliverable-desc">Featured the rooftop pool and bar with panoramic views of the Rocky Mountains &mdash; the hero amenity that made this property stand out and drove the strongest engagement.</div><div class="deliverable-tag">Mountain Views</div></div>
-            <div class="deliverable-card"><div class="deliverable-icon">🏷️</div><div class="deliverable-title">Brand Tags &amp; Mentions</div><div class="deliverable-desc">Direct @halcyonhotelcherrycreek tag on reel and stories, plus collaborative post tagging &mdash; driving traffic directly to the hotel's Instagram profile.</div><div class="deliverable-tag">@halcyonhotelcherrycreek</div></div>
-        </div>
+  <div style="max-width: 1400px; margin: 0 auto;">
+    <div class="section-number">02 &mdash; Deliverables</div>
+    <div class="section-headline" style="margin-bottom: 48px;">What we<br><em>delivered.</em></div>
+    <div class="deliverables-grid">
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🎬</div>
+        <div class="deliverable-title">Instagram Reel</div>
+        <div class="deliverable-desc">High-production reel showcasing the room, rooftop, and overall vibe of the Halcyon &mdash; positioned as a hidden gem recommendation for Denver travelers.</div>
+        <div class="deliverable-tag">19.9K Views</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">📱</div>
+        <div class="deliverable-title">Instagram Stories</div>
+        <div class="deliverable-desc">Real-time story coverage across @scottdclary (2M followers) documenting the stay &mdash; room tour, rooftop sunset at Rare Bird, Gear Garage, and Cherry Creek neighborhood exploration.</div>
+        <div class="deliverable-tag">Multi-Slide</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🍽️</div>
+        <div class="deliverable-title">Dining Feature</div>
+        <div class="deliverable-desc">Dedicated coverage of Rare Bird rooftop bar and Quality Italian &mdash; highlighting the culinary and cocktail experience that elevates the Halcyon beyond a typical hotel stay.</div>
+        <div class="deliverable-tag">Rooftop &amp; Italian</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🏨</div>
+        <div class="deliverable-title">Room & Property</div>
+        <div class="deliverable-desc">Full showcase of the boutique hotel suite with modern design, the signature Gear Garage with complimentary bikes and gear, and Cherry Creek's walkable luxury shopping district.</div>
+        <div class="deliverable-tag">Lifestyle</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">📍</div>
+        <div class="deliverable-title">Neighborhood Context</div>
+        <div class="deliverable-desc">Positioned Cherry Creek North as Denver's best-kept secret &mdash; giving audiences a compelling reason to explore beyond the typical downtown Denver itinerary.</div>
+        <div class="deliverable-tag">Location</div>
+      </div>
+      <div class="deliverable-card">
+        <div class="deliverable-icon">🏷️</div>
+        <div class="deliverable-title">Brand Tags & Mentions</div>
+        <div class="deliverable-desc">Direct @halcyonhotelcherrycreek tag on reel and stories, plus collaborative post tagging &mdash; driving traffic directly to the Halcyon's Instagram profile.</div>
+        <div class="deliverable-tag">@halcyonhotel</div>
+      </div>
     </div>
+  </div>
 </div>
 
+<!-- HIGHLIGHT BAR -->
 <div class="highlight-bar">
-    <div class="highlight-item"><div class="highlight-number">98.9%</div><div class="highlight-label">Interactions from Non-Followers</div></div>
-    <div class="highlight-item"><div class="highlight-number">53.4%</div><div class="highlight-label">Views from Non-Followers</div></div>
-    <div class="highlight-item"><div class="highlight-number">2,376</div><div class="highlight-label">Unique Accounts Engaged</div></div>
+  <div class="highlight-item">
+    <div class="highlight-number">98.9%</div>
+    <div class="highlight-label">Interactions from Non-Followers</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-number">53.4%</div>
+    <div class="highlight-label">Views from Non-Followers</div>
+  </div>
+  <div class="highlight-item">
+    <div class="highlight-number">2,376</div>
+    <div class="highlight-label">Unique Accounts Engaged</div>
+  </div>
 </div>
 
+<!-- 03 &mdash; PERFORMANCE -->
 <section id="performance">
-    <div class="section-number">03 &mdash; Performance</div>
-    <div class="section-headline">Results that<br><em>speak.</em></div>
-    <p style="font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 600px; margin-bottom: 12px;">Within 48 hours of posting, the reel generated strong reach and engagement &mdash; with over half of all views coming from non-followers, introducing Halcyon Cherry Creek to entirely new audiences.</p>
-    <p style="font-size: 14px; color: var(--text-light); margin-bottom: 0;"><em>Metrics captured at 48 hours post-publish. Still accumulating.</em></p>
-    <div class="perf-grid">
-        <div class="perf-card"><div class="perf-number">19,872</div><div class="perf-label">Total Views</div><div class="perf-sublabel">46.6% followers &middot; 53.4% new</div></div>
-        <div class="perf-card"><div class="perf-number">4,942</div><div class="perf-label">Unique Viewers</div></div>
-        <div class="perf-card"><div class="perf-number">1,962</div><div class="perf-label">Likes</div></div>
-        <div class="perf-card"><div class="perf-number">77</div><div class="perf-label">Comments</div></div>
-        <div class="perf-card"><div class="perf-number">267</div><div class="perf-label">Saves</div><div class="perf-sublabel">High purchase intent signal</div></div>
-        <div class="perf-card"><div class="perf-number">250</div><div class="perf-label">Shares</div><div class="perf-sublabel">Organic amplification</div></div>
-        <div class="perf-card"><div class="perf-number">2,736</div><div class="perf-label">Total Interactions</div></div>
-        <div class="perf-card"><div class="perf-number">2,376</div><div class="perf-label">Accounts Engaged</div></div>
+  <div class="section-number">03 &mdash; Performance</div>
+  <div class="section-headline">Results that<br><em>speak.</em></div>
+  <p style="font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 600px; margin-bottom: 12px;">Within 24 hours of posting, the reel generated significant reach and engagement &mdash; with over half of all views coming from non-followers, exposing the Halcyon to entirely new audiences.</p>
+  <p style="font-size: 14px; color: var(--text-light); margin-bottom: 0;"><em>Metrics captured at 24 hours post-publish. Still accumulating.</em></p>
+
+  <div class="perf-grid">
+    <div class="perf-card">
+      <div class="perf-number">19,900</div>
+      <div class="perf-label">Total Views</div>
+      <div class="perf-sublabel">46.6% followers &middot; 53.4% new</div>
     </div>
+    <div class="perf-card">
+      <div class="perf-number">5,847</div>
+      <div class="perf-label">Unique Viewers</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">2,050</div>
+      <div class="perf-label">Likes</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">169</div>
+      <div class="perf-label">Comments</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">267</div>
+      <div class="perf-label">Saves</div>
+      <div class="perf-sublabel">High purchase intent signal</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">250</div>
+      <div class="perf-label">Shares</div>
+      <div class="perf-sublabel">Organic amplification</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">2,736</div>
+      <div class="perf-label">Total Interactions</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-number">2,376</div>
+      <div class="perf-label">Accounts Engaged</div>
+    </div>
+  </div>
 </section>
 
+<!-- PROPERTY GALLERY -->
+<div class="photo-grid" style="max-height: 360px; overflow: hidden;">
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2024/08/001_240614_WerkCreative_Halcyon_RareBird_Roof_300DPI.jpg" alt="Rare Bird Rooftop" style="height: 360px; object-fit: cover;">
+    <span class="photo-caption">Rare Bird Rooftop</span>
+  </div>
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2025/03/spring_pool-1148x732.jpg" alt="The Pool" style="height: 360px; object-fit: cover;">
+    <span class="photo-caption">The Pool</span>
+  </div>
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2024/04/196A7678-min.jpg" alt="Gear Garage" style="height: 360px; object-fit: cover;">
+    <span class="photo-caption">Gear Garage</span>
+  </div>
+</div>
+
+<!-- 04 &mdash; EXPERIENCE -->
 <section id="experience">
-    <div class="section-number">04 &mdash; The Experience</div>
-    <div class="section-headline">Everything<br><em>provided.</em></div>
-    <p style="font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 600px; margin-bottom: 0;">A breakdown of the full hosted experience &mdash; from room to rooftop to dining &mdash; that made this collaboration possible.</p>
-    <div class="experience-items">
-        <div class="exp-item"><div class="exp-category">Accommodation</div><div class="exp-title">Boutique Room &mdash; Cherry Creek</div><div class="exp-desc">Hosted birthday stay at Halcyon, a Cherry Creek hotel. Modern design, comfortable rooms, and the kind of personalized service that made Gina's birthday celebration feel genuinely special. The staff went out of their way to create a memorable experience.</div></div>
-        <div class="exp-item"><div class="exp-category">Dining</div><div class="exp-title">Local Jones</div><div class="exp-desc">On-site dining at Local Jones &mdash; Halcyon's in-house restaurant. Solid food in a casual, inviting setting. A key content touchpoint that showcased the convenience and quality of the hotel's culinary offering without needing to leave the property.</div></div>
-        <div class="exp-item"><div class="exp-category">Amenities</div><div class="exp-title">Rooftop Pool &amp; Bar</div><div class="exp-desc">The standout amenity &mdash; a rooftop pool and bar with panoramic views of the Rocky Mountains. This was the visual centerpiece of the content and the single biggest driver of engagement, saves, and shares. The mountain backdrop gave the property a unique selling point no downtown Denver hotel can match.</div></div>
-        <div class="exp-item"><div class="exp-category">Location</div><div class="exp-title">Cherry Creek, Denver</div><div class="exp-desc">Situated in Cherry Creek &mdash; a walkable, upscale neighborhood with great restaurants that most visitors overlook in favor of downtown. The content's "skip downtown, stay here" positioning turned the neighborhood itself into a discovery, driving saves from an audience planning future Denver trips.</div></div>
+  <div class="section-number">04 &mdash; The Experience</div>
+  <div class="section-headline">Everything<br><em>provided.</em></div>
+  <p style="font-size: 16px; color: var(--text-mid); line-height: 1.8; max-width: 600px; margin-bottom: 0;">A breakdown of the full hosted experience &mdash; from room to rooftop to neighborhood &mdash; that made this collaboration possible.</p>
+
+  <div class="experience-items">
+    <div class="exp-item">
+      <div class="exp-category">Accommodation</div>
+      <div class="exp-title">The Suite &mdash; Modern Luxury</div>
+      <div class="exp-desc">Multi-night stay in one of the Halcyon's signature suites, featuring contemporary design, premium amenities, and floor-to-ceiling windows with Cherry Creek views. Full access to the hotel's curated amenities including the Gear Garage with complimentary bikes, skateboards, and adventure equipment.</div>
     </div>
+    <div class="exp-item">
+      <div class="exp-category">Dining</div>
+      <div class="exp-title">Rare Bird &amp; Quality Italian</div>
+      <div class="exp-desc">Dining at the Halcyon's rooftop Rare Bird bar &mdash; one of Denver's most sought-after rooftop experiences &mdash; plus Quality Italian, the on-site restaurant. A cornerstone of the content, showcasing the caliber of the culinary and cocktail program.</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-category">Amenities</div>
+      <div class="exp-title">Gear Garage &amp; Rooftop Pool</div>
+      <div class="exp-desc">Complete access to the Halcyon's signature amenities &mdash; the Gear Garage stocked with bikes, skateboards, and outdoor gear, plus the rooftop pool and sundeck. This "adventure-meets-luxury" angle was key to the content's appeal and differentiated the Halcyon from typical hotel stays.</div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-category">Location</div>
+      <div class="exp-title">Cherry Creek North, Denver</div>
+      <div class="exp-desc">Situated in Denver's premier shopping and dining district &mdash; a walkable, upscale neighborhood that most visitors overlook. The "hidden gem" positioning of Cherry Creek drove strong saves and shares from an audience actively planning Denver trips.</div>
+    </div>
+  </div>
 </section>
 
+<!-- FINAL PHOTO STRIP -->
+<div class="photo-grid" style="grid-template-columns: repeat(4, 1fr); max-height: 280px; overflow: hidden;">
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2025/06/HalcyonHotel-062025-JoeThomas-7-1440x800.jpg" alt="Suite Detail" style="height: 280px; object-fit: cover;">
+  </div>
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2020/08/Terrace1-1440x800.jpg" alt="Terrace Room" style="height: 280px; object-fit: cover;">
+  </div>
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2024/10/Halcyon-230.jpg" alt="Dining Experience" style="height: 280px; object-fit: cover;">
+  </div>
+  <div class="photo-wrap">
+    <img src="https://cdn.halcyonhotelcherrycreek.com/assets/uploads/2026/01/002_250818_WerkCreative_Halcyon_Hotel_72DPI_V2-960x490.jpg" alt="Rare Bird Bar" style="height: 280px; object-fit: cover;">
+  </div>
+</div>
+
+<!-- CTA -->
 <div class="cta-section">
-    <div class="section-headline">Let's create<br><em>something together.</em></div>
-    <p class="cta-sub">Interested in a similar partnership? We'd love to bring this level of storytelling and reach to your property.</p>
-    <div class="cta-links">
-        <a href="https://mediakit.scottandgina.life/" class="cta-link primary">View Full Media Kit</a>
-        <a href="mailto:scott@scottdclary.com" class="cta-link">Get In Touch</a>
-    </div>
+  <div class="section-headline">Let's create<br><em>something together.</em></div>
+  <p class="cta-sub">Interested in a similar partnership? We'd love to bring this level of storytelling and reach to your property.</p>
+  <div class="cta-links">
+    <a href="https://mediakit.scottandgina.life/" class="cta-link primary">View Full Media Kit</a>
+    <a href="mailto:scott@scottdclary.com" class="cta-link">Get In Touch</a>
+  </div>
 </div>
 
 <footer>
-    &copy; 2026 SCOTT &amp; GINA &middot; SCOTTANDGINA.LIFE
+  &copy; 2026 SCOTT & GINA &middot; SCOTTANDGINA.LIFE
 </footer>
 
 </body>
